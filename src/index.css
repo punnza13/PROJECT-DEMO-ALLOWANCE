@@ -13,11 +13,11 @@
 }
 
 [data-theme='dark'] {
-  --bg-page: #111827;
-  --bg-card: #1f2937;
-  --text-main: #ffffff; /* Bright pure white for maximum legibility */
-  --text-muted: #d1d5db; /* Lighter gray for muted text so it's readable */
-  --border-color: #374151;
+  --bg-page: #0f0f0f;       /* True black background (like the reference image) */
+  --bg-card: #1a1a1a;       /* Slightly lighter card surface */
+  --text-main: #ffffff;
+  --text-muted: #9ca3af;    /* Slightly darker muted so contrast is balanced */
+  --border-color: #2a2a2a;  /* Subtle dark border */
   /* Keeping accent orange intact as it works well on dark */
 }
 
@@ -45,3 +45,26 @@ button {
   font-family: var(--font-family);
   background: transparent;
 }
+
+/* ===== GLOBAL MOBILE BASE ===== */
+html {
+  /* Prevent iOS font size adjustment */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Prevent horizontal scrollbar from appearing on the whole page */
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  /* Ensure inputs and selects are big enough to tap comfortably */
+  input, select, textarea {
+    font-size: 16px !important; /* prevents iOS zoom-in on focus */
+    min-height: 44px;
+  }
+
+  /* Toast notification repositioned for mobile */
+  /* (context provides fixed positioning already) */
+}
+

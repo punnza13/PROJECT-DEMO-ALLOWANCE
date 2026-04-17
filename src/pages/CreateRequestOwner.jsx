@@ -660,6 +660,50 @@ export default function CreateRequestOwner() {
           border-radius: 4px;
         }
 
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+          .cr-owner-layout {
+            flex-direction: column;
+          }
+
+          .cr-owner-main {
+            flex: 1 1 100%;
+          }
+
+          .cr-owner-sidebar {
+            flex: 1 1 100%;
+          }
+
+          .summary-black-box {
+            position: static;
+          }
+
+          .input-grid-2,
+          .input-grid-3 {
+            grid-template-columns: 1fr;
+          }
+
+          .emp-card-top-row {
+            flex-wrap: wrap;
+          }
+
+          .emp-card-top-row .input-group {
+            flex: 1 1 100%;
+          }
+
+          .approval-buttons {
+            flex-direction: column;
+          }
+
+          .cr-owner-title {
+            font-size: 20px;
+          }
+
+          .cr-owner-card {
+            padding: 20px;
+          }
+        }
+
       `}</style>
     </div>
   );

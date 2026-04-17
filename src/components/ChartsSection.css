@@ -150,3 +150,29 @@
   font-size: 11px;
   color: var(--text-muted);
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .charts-section {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-container {
+    padding: 24px 12px 12px;
+  }
+
+  .chart-bars {
+    height: 150px;
+  }
+
+  .bar {
+    width: 8px;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+}

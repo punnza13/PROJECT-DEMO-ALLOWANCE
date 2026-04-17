@@ -958,6 +958,43 @@ export default function CreateRequest() {
           background-color: #F3F4F6;
           color: var(--text-main);
         }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+          .cr-layout {
+            flex-direction: column;
+          }
+
+          .cr-main-column {
+            flex: 1 1 100%;
+          }
+
+          .cr-sidebar-column {
+            flex: 1 1 100%;
+          }
+
+          .cr-summary-card {
+            position: static;
+          }
+
+          .cr-input-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .modal-content {
+            width: calc(100vw - 32px);
+            max-height: 90vh;
+            overflow-y: auto;
+          }
+
+          .cr-header {
+            margin-bottom: 20px;
+          }
+
+          .cr-title {
+            font-size: 22px;
+          }
+        }
       `}</style>
     </div>
   );

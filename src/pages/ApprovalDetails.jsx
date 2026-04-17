@@ -69,7 +69,7 @@ export default function ApprovalDetails() {
       }}>
         <h2 style={{ fontSize: '22px', fontWeight: 'bold', marginBottom: '32px', color: 'var(--text-main)' }}>ข้อมูล</h2>
         
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', rowGap: '32px', columnGap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', rowGap: '32px', columnGap: '24px' }}>
           <div>
             <p style={{ fontSize: '16px', fontWeight: 'bold', color: 'var(--text-main)', margin: '0 0 8px 0' }}>รหัสโครงการ</p>
             <p style={{ fontSize: '16px', color: 'var(--text-main)', margin: 0 }}>{req.projectId}</p>
@@ -144,20 +144,19 @@ export default function ApprovalDetails() {
         </table>
       </div>
 
-      {/* Bottom Action Buttons */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '32px', paddingBottom: '32px' }}>
+      {/* Bottom Action Buttons - responsive */}
+      <div className="approval-action-row">
         <button 
           onClick={handleReject}
           style={{
             backgroundColor: 'var(--bg-card)',
-            color: '#000',
+            color: 'var(--text-main)',
             border: '1px solid var(--border-color)',
             borderRadius: '8px',
             padding: '16px 0',
             fontSize: '18px',
             fontWeight: 'bold',
             cursor: 'pointer',
-            width: '280px'
           }}
         >
           ตีกลับ
@@ -173,12 +172,44 @@ export default function ApprovalDetails() {
             fontSize: '18px',
             fontWeight: 'bold',
             cursor: 'pointer',
-            width: '280px'
           }}
         >
           ยืนยันการอนุมัติ
         </button>
       </div>
+
+      <style>{`
+        .approval-action-row {
+          display: flex;
+          justify-content: center;
+          gap: 32px;
+          padding-bottom: 32px;
+        }
+
+        .approval-action-row button {
+          width: 280px;
+        }
+
+        .approval-table-wrap {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        @media (max-width: 768px) {
+          .approval-action-row {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 12px;
+            padding: 0 0 32px 0;
+          }
+
+          .approval-action-row button {
+            width: 100%;
+            font-size: 16px;
+            padding: 14px 0;
+          }
+        }
+      `}</style>
 
     </div>
   );
